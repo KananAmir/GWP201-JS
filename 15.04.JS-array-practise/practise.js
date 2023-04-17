@@ -163,3 +163,11 @@ function findMaxKey(array) {
 console.log(findMaxKey(arr2));
 
 // arr2 de terkibinde 1 den cox 't' herfi olan obyekt(ler)in key(ler)ini tapin.
+
+let filteredObjs = arr2.filter(
+  (el, i, arr) =>
+    el.name.toLocaleLowerCase().indexOf("t") ==
+    el.name.toLocaleLowerCase().lastIndexOf("t")
+);
+
+console.log(filteredObjs);
