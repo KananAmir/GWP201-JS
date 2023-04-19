@@ -13,3 +13,4 @@
 //bütün ölkə adlari ve qarsisinda paytaxtı
 
 //dünya əhalisinin sayı
+

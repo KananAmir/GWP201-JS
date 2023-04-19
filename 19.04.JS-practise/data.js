@@ -2256,3 +2256,14 @@ const countries_data = [
     area: 390757,
   },
 ];
+// console.log(countries_data.sort((a,b)=>b.name.localeCompare(a.name)));
+// console.log(countries_data.sort((a,b)=>b.area-a.area).slice(0,10))
+// console.log(countries_data.sort((a,b)=>b.population-a.population).slice(0,10))
+// console.log(countries_data.filter((el) => el.languages.includes("English")));
+// console.log(
+//   countries_data.filter((el) => el.region === "Asia" || el.region === "Europe")
+// );
+// console.log(countries_data.filter((el) => el.languages.length > 1));
+// console.log(countries_data.map(el=>`${el.capital}, ${el.name}`));
+
+console.log(countries_data.reduce((acc,curr)=>acc+=curr.population,0));
