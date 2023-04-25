@@ -48,6 +48,9 @@ let startBtn = document.querySelector(".start");
 let stopBtn = document.querySelector(".stop");
 let resetBtn = document.querySelector(".reset");
 let result = document.querySelector("#result");
+let input = document.querySelector("#increment-input")
+let incByInput = document.querySelector("#inc-by-input")
+
 
 console.log(startBtn);
 // console.log(stopBtn);
@@ -88,3 +91,10 @@ resetBtn.addEventListener("click", function () {
   startBtn.removeAttribute("disabled");
   stopBtn.removeAttribute("disabled");
 });
+
+
+incByInput.addEventListener("click", function(){
+  count += +input.value
+  result.innerText = count;
+})
+
