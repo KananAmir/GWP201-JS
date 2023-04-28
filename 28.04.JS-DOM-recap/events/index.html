@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+      header {
+        background-color: teal;
+        padding: 30px 5%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: all 1s;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header ul {
+        display: flex;
+        column-gap: 30px;
+      }
+      .header ul li a,
+      h1 {
+        color: white;
+      }
+
+      section {
+        height: 200vh;
+      }
+
+      .header-scroll {
+        background-color: black;
+        padding: 15px 5%;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1 class="logo">GWP201</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li><a href="#">Team</a></li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section></section>
+    <script src="./app.js"></script>
+  </body>
+</html>
