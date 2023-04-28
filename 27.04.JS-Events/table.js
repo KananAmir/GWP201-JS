@@ -231,14 +231,16 @@ const users = [
   },
 ];
 // const usersCopy=JSON.parse(JSON.stringify(users))
-const usersCopy=structuredClone(users)
-
+const usersCopy = structuredClone(users);
 
 let tBody = document.querySelector("tbody");
 let search = document.querySelector("#search");
-let ascBtn = document.querySelector(".asc");
-let decBtn = document.querySelector(".dec");
-let defBtn = document.querySelector(".def");
+// let ascBtn = document.querySelector(".asc");
+// let decBtn = document.querySelector(".dec");
+// let defBtn = document.querySelector(".def");
+
+// let sortAscDsc = document.querySelector(".sortAscDsc");
+let sortAscDscDef = document.querySelector(".sortAscDscDef");
 
 function drawTable(array) {
   tBody.innerHTML = "";
@@ -271,20 +273,53 @@ search.addEventListener("input", function (event) {
   console.log(filteredUsers);
 });
 
-ascBtn.addEventListener("click", function () {
-  let sortedArr = users.sort((a, b) => a.id - b.id);
-  console.log(sortedArr);
-  drawTable(sortedArr)
-  
-});
-decBtn.addEventListener("click", function () {
-  let sortedArr = users.sort((a, b) => b.id - a.id);
-  console.log(sortedArr);
-  drawTable(sortedArr)
-  
-});
-defBtn.addEventListener("click", function () {
- 
-  drawTable(usersCopy)
-  
+// ascBtn.addEventListener("click", function () {
+//   let sortedArr = users.sort((a, b) => a.id - b.id);
+//   console.log(sortedArr);
+//   drawTable(sortedArr)
+
+// });
+// decBtn.addEventListener("click", function () {
+//   let sortedArr = users.sort((a, b) => b.id - a.id);
+//   console.log(sortedArr);
+//   drawTable(sortedArr)
+
+// });
+// defBtn.addEventListener("click", function () {
+
+//   drawTable(usersCopy)
+
+// });
+
+// let bool = false;
+
+// sortAscDsc.addEventListener("click", function () {
+//   bool = !bool;
+//   // console.log(bool);
+//   let sortedUsers;
+//   if (bool) {
+//     sortedUsers = users.sort((a, b) => a.id - b.id);
+//     this.innerText = "Descending";
+//   } else {
+//     sortedUsers = users.sort((a, b) => b.id - a.id);
+//     this.innerText = "Ascending";
+//   }
+
+//   drawTable(sortedUsers);
+// });
+
+sortAscDscDef.addEventListener("click", function () {
+  let sortedUsers;
+  if (this.innerText === "Ascending") {
+    sortedUsers = users.sort((a, b) => a.id - b.id);
+    this.innerText = "Descending";
+  } else if (this.innerText === "Descending") {
+    sortedUsers = users.sort((a, b) => b.id - a.id);
+    this.innerText = "Default";
+  } else {
+    sortedUsers = [...usersCopy];
+    this.innerText = "Ascending";
+  }
+
+  drawTable(sortedUsers);
 });
