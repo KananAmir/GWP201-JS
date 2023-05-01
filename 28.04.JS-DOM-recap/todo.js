@@ -67,6 +67,7 @@ function createList() {
       //   todoInput.value = this.closest("li").children[0].innerText;
       todoInput.value = this.closest("li").firstElementChild.innerText;
       this.closest("li").remove();
+      addTodo.innerHTML="EDIT"
     });
   });
 
@@ -74,6 +75,10 @@ function createList() {
   addTodo.disabled = true;
 }
 addTodo.addEventListener("click", createList);
+addTodo.addEventListener("click", function(){
+  addTodo.innerHTML="ADD"
+});
+
 
 window.addEventListener("keyup", function (event) {
   //   console.log(event.code);
