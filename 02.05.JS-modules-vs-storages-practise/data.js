@@ -89,3 +89,16 @@ const books = [
     year: "2001",
   },
 ];
+
+const BASE_URL = "https://northwind.vercel.app/api/customers";
+// export default function sum(a, b) {
+//   return a + b;
+// }
+
+function sum(a, b) {
+  return a + b;
+}
+
+export { books, BASE_URL };
+
+export default sum;
