@@ -3,7 +3,7 @@ let row = document.querySelector(".row");
 
 favorits.forEach((item) => {
   row.innerHTML += `
-      <div class="col-3 my-4">
+      <span class="col-3 my-4">
       <div class="card" style="width: 18rem">
         <div class="card-body">
           <h5 class="card-title">${item.title}</h5>
@@ -14,7 +14,7 @@ favorits.forEach((item) => {
           <button class="btn btn-danger" id=${item.id}>Remove from Favorites</button>
         </div>
       </div>
-    </div>
+    </span>
       `;
 });
 
@@ -23,39 +23,20 @@ let allRemoveBtns = document.querySelectorAll(".btn-danger");
 allRemoveBtns.forEach((item) => {
   item.addEventListener("click", function () {
     console.log("salam");
-    // console.log(this.id);
     favorits = JSON.parse(localStorage.getItem("favoritedBooks"));
 
-    let index = favorits.findIndex((e) => e.id == item.id);
-    console.log(index);
-    favorits.splice(index, 1);
+    // let index = favorits.findIndex((e) => e.id == item.id);
+    // console.log(index);
+    // favorits.splice(index, 1);
 
-    console.log(favorits);
-    // let updatedFavBooks = favorits.filter(
-    //   (el) => el.id != item.getAttribute("id")
-    // );
+    let updatedFavBooks = favorits.filter(
+      (el) => el.id != item.getAttribute("id")
+    );
 
-    // localStorage.setItem("favoritedBooks", JSON.stringify(updatedFavBooks));
-    localStorage.setItem("favoritedBooks", JSON.stringify(favorits));
+    localStorage.setItem("favoritedBooks", JSON.stringify(updatedFavBooks));
 
-    row.innerHTML = "";
-
-    favorits.forEach((item) => {
-      row.innerHTML += `
-            <div class="col-3 my-4">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <h5 class="card-title">${item.title}</h5>
-                <p class="card-text">
-                 Publisher: ${item.publisher}
-                </p>
-                 <i><p>Year: ${item.year}</p></i>
-                <button class="btn btn-danger" id=${item.id}>Remove from Favorites</button>
-              </div>
-            </div>
-          </div>
-            `;
-    });
+    // this.parentElement.parentElement.parentElement.remove();
+    this.closest("span").remove();
   });
 });
 // console.log(allRemoveBtns);

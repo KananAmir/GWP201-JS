@@ -19,7 +19,7 @@ books.forEach((item) => {
          Publisher: ${item.publisher}
         </p>
          <i><p>Year: ${item.year}</p></i>
-        <button class="btn btn-primary" id=${item.id}>Go somewhere</button>
+        <button class="btn btn-primary" id=${item.id}>Add to Favs</button>
       </div>
     </div>
   </div>
@@ -30,17 +30,21 @@ let allAddBtns = document.querySelectorAll(".btn-primary");
 
 allAddBtns.forEach((elem) => {
   elem.addEventListener("click", function () {
+    let selectedObj = allBooks.find((item) => item.id == elem.id);
     // console.log(this.id);
     // console.log(elem.id);
-    console.log(elem.getAttribute("id"));
+    // console.log(elem.getAttribute("id"));
 
-    let favoritedBook = books.find((obj) => obj.id === +elem.id);
+    allBooks.includes(selectedObj);
+    if (!allBooks.includes(selectedObj)) {
+      let favoritedBook = books.find((obj) => obj.id === +elem.id);
 
-    allBooks.push(favoritedBook);
+      allBooks.push(favoritedBook);
 
-    // console.log(allBooks);
-
-    localStorage.setItem("favoritedBooks", JSON.stringify(allBooks));
+      localStorage.setItem("favoritedBooks", JSON.stringify(allBooks));
+    } else {
+      alert("You have already added this book!!");
+    }
   });
 });
 
