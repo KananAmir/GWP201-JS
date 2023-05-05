@@ -22,6 +22,7 @@ function listFavBooks() {
 }
 
 listFavBooks();
+
 function removeBook(bookId) {
   favorits = favorits.filter((obj) => obj.id != bookId);
   localStorage.setItem("favoritedBooks", JSON.stringify(favorits));
