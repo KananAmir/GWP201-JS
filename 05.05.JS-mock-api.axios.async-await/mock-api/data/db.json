@@ -1,0 +1,16 @@
+{
+  "students": [
+    {
+      "firstName": "Yaqut",
+      "lastName": "Verdiyeva",
+      "score": 95,
+      "id": 1
+    },
+    {
+      "firstName": "Yaqut",
+      "lastName": "Verdiyeva",
+      "score": 95,
+      "id": "2"
+    }
+  ]
+}
